@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safiqah Balqis - Personal Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Global Styles */
+    body {
+      font-family:  'Lucida Handwriting',Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      background-image: url("cloud2.gif");
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #ADD8E6;
+      padding: 20px 0;
+      text-align: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #000000;
+      overflow: hidden; 
+      white-space: nowrap; 
+      border-right: .15em solid orange; 
+      animation: typing 4s steps(30, end), blink-caret .75s step-end infinite; 
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: orange; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #7AB2D3;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a i {
+      font-size: 1.2rem;
+    }
+
+    nav a:hover {
+      background-color: #ff4081;
+      color: #fff;
+    }
+
+    /* Responsive Navbar */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 5px 0;
+        width: 90%;
+        justify-content: center;
+      }
+    }
+
+    /* Main Content Styles */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    /* Section Box Styles */
+    .section-box {
+      width: 90%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+      border-radius: 15px;
+      padding: 54px;
+      margin: 40px auto;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+    }
+
+    .section-box img.rabbit {
+      position: absolute center;
+      position: right;
+      right: 20px;
+      bottom: 20px;
+      max-width: 100px; /* Adjust size as needed */
+    }
+
+    .section-box h2 {
+      font-size: 2.5rem;
+      padding: 20px;
+    }
+
+/* Tambahkan gaya untuk menambahkan emoji love merah di samping teks */
+.section-box h2:after {
+  content: "☀️"; /* Emoji*/
+  position: relative;
+  top: 50%;
+  right: -1rem; /* Sesuaikan jarak emoji dengan teks */
+  transform: translateY(-50%);
+  font-size: 2rem; /* Sesuaikan ukuran emoji */
+}
+
+    .section-box p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .section-box:hover {
+      transform: scale(1.02);
+    }
+
+    /* Section Header Styles */
+    .section-box h2 {
+      background-color: #003366;
+      color: white;
+      padding: 15px;
+      margin: -30px -30px 20px -30px;
+      border-radius: 15px 15px 0 0;
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+audio, video {
+  display: block;
+  margin: 20px auto; /* Center the audio and video */
+  max-width: 100%; /* Responsive width */
+}
+
+.centered-text {
+  text-align: center;
+  font-size: 1.5rem; /* Adjust size as needed */
+  margin: 20px 0; /* Add spacing above and below */
+  font-weight: bold; /* Optional: make the text bold */
+  color: #003366; /* Optional: change text color */
+}
+
+    /* Profile Image */
+    .profile-img {
+      max-width: 200px;
+      border-radius: 50%;
+      border: 4px solid #7c1b49;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Biodata Table Styles */
+    .biodata-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .biodata-table th,
+    .biodata-table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+.biodata-table th {
+  background-color: #6AABD2; /* Left column color */
+  font-weight: bold;
+  border: 1px solid black; /* Add black border */
+}
+
+.biodata-table td {
+  background-color: #B7CFDC; /* Right column color */
+  border: 1px solid black; /* Add black border */
+}
+
+    /* Experience Bar */
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #7c1b49;
+    }
+
+    .progress-bar {
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      height: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background-color: #7c1b49;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 10px;
+      color: white;
+      font-size: 14px;
+    }
+
+    /* Gallery */
+    .gallery-horizontal {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 20px 0;
+    }
+
+    .gallery-horizontal .gallery-item {
+      flex: 0 0 auto;
+      text-align: center;
+      max-width: 300px;
+      margin: 0 10px;
+    }
+
+    .gallery-horizontal img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+#borderimg2 {
+  width: 100%;
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 20% round;
+  border-color: #4B3D3D;
+  background-color: #37BEB0;
+  margin: 0 10px;
+}
+    .gallery-horizontal img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Three columns */
+      grid-gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    
+
+#borderimg2 {
+  width: 50%;
+  border: 10px solid transparent;
+  padding: 5px;
+  border-image: url(border.png) 10% round;
+  border-color: #4B3D3D; /* Dark brown color */
+  background-color: #37BEB0; /* New background color */
+  transform: scale(1.2);
+  display: inline-block;
+  margin-left: -20%;
+}
+
+/* Styling for UiTM Cawangan Kelantan Image in Education Section */
+#education .gallery-item {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#education .gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+#education .gallery-item img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.3s ease;
+}
+
+#education .gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+#education .gallery-item p {
+  margin: 5px;
+  padding: 20px;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #003366, #00509e);
+  border-radius: 0 0 15px 15px;
+}
+
+/* Optional: Additional styling for the border */
+#education .gallery-item #borderimg2 {
+  padding: 60px;
+  border: 10px solid #7c1b49;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Styling for family section images in horizontal order */
+.family-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.family-gallery img {
+  width: 100px;
+  max-height: 150px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.family-gallery img:hover {
+  transform: scale(1.5);
+}
+
+<title>Family Tree - Chart Style</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .family-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      gap: 30px;
+    }
+
+    .generation {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .family-member {
+      background-color: #7c1b49;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      width: 150px;
+      transition: transform 0.3s;
+    }
+
+    .family-member:hover {
+      transform: scale(1.1);
+    }
+
+    .connector {
+      width: 6px;
+      background-color: #7c1b49;
+      margin: 0 auto;
+    }
+
+    .horizontal-connector {
+      height: 6px;
+      background-color: #7c1b49;
+      width: 0%;
+      margin: 0 auto;
+    }
+
+    .vertical-connector {
+      height: 150px;
+    }
+
+    .parent-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      width: 50%;
+    }
+
+    .family-tree {
+      margin: 50px auto;
+      max-width: 800px;
+    }
+
+    .generation {
+      gap: 50px;
+    }
+
+    .family-member {
+      width: 190px;
+      font-size: 2.5rem;
+    }
+
+/* Slideshow Styles for Family Section */
+.family-gallery {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto; /* Allow images to maintain their original aspect ratio*/
+}
+
+.family-gallery img {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.family-gallery img.hover {
+  transform: scale(1.1);
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.family-gallery img:nth-child(1) {
+  animation: slide 12s infinite;
+}
+
+.family-gallery img:nth-child(2) {
+  animation: slide 12s infinite 4s;
+}
+
+.family-gallery img:nth-child(3) {
+  animation: slide 12s infinite 8s;
+}
+
+
+/* Pop-up effect styles */
+.gallery img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Fullscreen pop-up container */
+.image-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-popup img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-popup img:hover {
+  transform: scale(1.05);
+}
+
+/* Close button styles */
+.image-popup .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.image-popup .close-btn:hover {
+  color: #ff4081;
+}
+
+    /* Contact Form */
+    .contact-form {
+      display: grid;
+      grid-gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #7c1b49;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background-color: #7c1b49;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #b93d72;
+    }
+
+    .social-media-table {
+  width: 60%;
+  border-collapse: collapse;
+  margin: auto;
+  font-family: copperplate, fantasy;
+}
+
+.social-media-table th,
+.social-media-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.social-media-table th {
+  background-color: #6AABD2; /* Header color */
+  color: white;
+  font-weight: bold;
+}
+
+.social-media-table td {
+  background-color: #f9f9f9;
+}
+
+.social-media-table i {
+  font-size: 5rem; /* Adjust icon size */
+}
+
+.social-media-table a {
+  text-decoration: none;
+  color: inherit; /* Match the text color */
+  transition: color 0.3s ease;
+}
+
+/* Tambahkan jarak table social media dari footer */
+#social-media {
+  margin-bottom: 5%; 
+}
+
+    footer {
+      background-color: #AAAAAA; /* Light gray background */
+      color: #333;
+      text-align: absolute;
+      padding: 15px;
+      width: 100%;
+      font-family: "Papyrus", fantasy;
+      font-size: 1.7rem;
+    }
+
+/* Efek teks footer bergerak dari kiri ke kanan secara berulang */
+footer p {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="banner7.jpg" alt="Safiqah Balqis Image">
+    <h1>Hi There, This Is Safiqah Balqis</h1>
+    <nav>
+      <a href="home.html"><i class="fas fa-home"></i>Home</a>
+      <a href="biodata.html"><i class="fas fa-id-card"></i>Biodata</a>
+      <a href="experience.html"><i class="fas fa-briefcase"></i>Experience</a>
+      <a href="education.html"><i class="fas fa-graduation-cap"></i>Education</a>
+      <a href="family.html"><i class="fas fa-users"></i>Family</a>
+      <a href="gallery.html"><i class="fas fa-images"></i>Gallery</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i>Contact</a>
+    </nav>
+  </header>
+
+
+    <section id="experience" class="section-box">
+      <h2>Experience</h2>
+      <p>These are my skills in the IT course:</p>
+      <div class="experience-bar">
+        <div class="skill">
+          <div class="skill-name">HTML</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 50%;">50%</div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">CSS</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 40%;">40%</div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Web Design</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 50%;">50%</div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Canva</div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: 80%;">80%</div>
+          </div>
+        </div>
+      </div>
+      <img src="rabbit.gif" alt="Rabbit" class="rabbit">
+    </section>
+
+
+  <footer>
+   <p>&copy; 2024 Safiqah Balqis. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
